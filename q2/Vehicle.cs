@@ -22,7 +22,7 @@ public class Vehicle
     
     // The ParkingLocation should decide if a vehicle is valid. If it isn't, it throws an exception. 
     // It means we don't have to reimplement Park and Unpark in Vehicle's children classes. 
-    // The exception will be throw up to the caller. 
+    // The exception will be thrown up to the caller. 
     // Part of me wishes I could use a java-style "throws Exception" pattern to let the caller know
     // that they have to be ready to handle an exception
     public void Park(ParkingLocation p)
