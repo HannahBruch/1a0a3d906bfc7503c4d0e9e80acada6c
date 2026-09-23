@@ -25,6 +25,7 @@ public class Garage : ParkingLocation
             throw new InvalidOperationException("There is no space left in the lot");
         } else {
             ParkedVehicles.Add(vehicle);
+            vehicle.ParkingLocation = this;
             if (vehicle.Weight < 1500)
                 AvailableCompactSpaces--;
             else
@@ -34,6 +35,7 @@ public class Garage : ParkingLocation
     public override void UnparkVehicle(Vehicle vehicle)
     {
         ParkedVehicles.Remove(vehicle); 
+        vehicle.ParkingLocation = this;
         if (vehicle.Weight < 1500)
             AvailableCompactSpaces++;
         else
